@@ -9,8 +9,9 @@ public class IdGeneratorService {
         return id + number;
     }
 
-    interface MyRandom{
-        int nextInt(int bound);
-    }
 
+}
+
+interface MyRandom{
+    int nextInt(int bound);
 }
