@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class MyProblemTest {
     @Test
     @DisplayName("เริ่มด้วย [")
-    void startWithSqrBracket(){
+    void startWithSqrBracket() {
         // Arrange
         MyProblem myProblem = new MyProblem("[1,5]");
         // Act
@@ -19,7 +19,7 @@ class MyProblemTest {
 
     @Test
     @DisplayName("เริ่มด้วย (")
-    void startWithBracket(){
+    void startWithBracket() {
         // Arrange
         MyProblem myProblem = new MyProblem("(1,5]");
         // Act
@@ -30,7 +30,7 @@ class MyProblemTest {
 
     @Test
     @DisplayName("จบด้วย ]")
-    void endWithSqrBracket(){
+    void endWithSqrBracket() {
         // Arrange
         MyProblem myProblem = new MyProblem("[1,5]");
         // Act
@@ -41,12 +41,34 @@ class MyProblemTest {
 
     @Test
     @DisplayName("จบด้วย )")
-    void endWithBracket(){
+    void endWithBracket() {
         // Arrange
         MyProblem myProblem = new MyProblem("[1,5)");
         // Act
         boolean result = myProblem.isEndWithInclude();
         // Assert
         assertFalse(result);
+    }
+
+    @Test
+    @DisplayName("เริ่มต้อน [1,5] => 1")
+    void getStartNumberWithSqr() {
+        // Arrange
+        MyProblem myProblem = new MyProblem("[1,5)");
+        // Act
+        int result = myProblem.getStart();
+        // Assert
+        assertEquals(1, result);
+    }
+
+    @Test
+    @DisplayName("เริ่มต้อน (1,5] => 1")
+    void getStartNumberWithBracket() {
+        // Arrange
+        MyProblem myProblem = new MyProblem("(1,5)");
+        // Act
+        int result = myProblem.getStart();
+        // Assert
+        assertEquals(2, result);
     }
 }

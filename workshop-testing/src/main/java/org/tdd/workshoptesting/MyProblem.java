@@ -8,11 +8,19 @@ public class MyProblem {
         this.input = input;
     }
 
-    public boolean isStartWithInclude(){
+    public boolean isStartWithInclude() {
         return this.input.startsWith("[");
     }
 
     public boolean isEndWithInclude() {
         return this.input.endsWith("]");
+    }
+
+    public int getStart() {
+        if (isStartWithInclude()) {
+            return Integer.parseInt(input.charAt(1) + "");
+        } else {
+            return Integer.parseInt(input.charAt(1) + "") + 1;
+        }
     }
 }
