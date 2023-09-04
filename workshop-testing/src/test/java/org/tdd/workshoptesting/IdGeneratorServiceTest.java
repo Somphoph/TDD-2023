@@ -13,12 +13,7 @@ class IdGeneratorServiceTest {
     @DisplayName("้ต้องการ generate id = START-5")
     void case01() {
         // Arrange
-        Random random = new Random(){
-            @Override
-            public int nextInt(int bound) {
-                return 5;
-            }
-        };
+        IdGeneratorService.MyRandom random = bound -> 5;
         IdGeneratorService service = new IdGeneratorService();
         // Act
         String result = service.process(random);

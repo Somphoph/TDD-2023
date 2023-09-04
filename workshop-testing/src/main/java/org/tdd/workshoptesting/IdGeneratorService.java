@@ -1,13 +1,16 @@
 package org.tdd.workshoptesting;
 
-import java.util.Random;
 
 public class IdGeneratorService {
 
-    public String process(Random r) {
+    public String process(MyRandom r) {
         String id = "START-";
         int number = r.nextInt(10);
         return id + number;
+    }
+
+    interface MyRandom{
+        int nextInt(int bound);
     }
 
 }
