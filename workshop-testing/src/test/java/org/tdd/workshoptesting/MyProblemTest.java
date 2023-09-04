@@ -28,5 +28,25 @@ class MyProblemTest {
         assertFalse(result);
     }
 
+    @Test
+    @DisplayName("จบด้วย ]")
+    void endWithSqrBracket(){
+        // Arrange
+        MyProblem myProblem = new MyProblem("[1,5]");
+        // Act
+        boolean result = myProblem.isEndWithInclude();
+        // Assert
+        assertTrue(result);
+    }
 
+    @Test
+    @DisplayName("จบด้วย )")
+    void endWithBracket(){
+        // Arrange
+        MyProblem myProblem = new MyProblem("[1,5)");
+        // Act
+        boolean result = myProblem.isEndWithInclude();
+        // Assert
+        assertFalse(result);
+    }
 }
