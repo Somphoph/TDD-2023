@@ -16,11 +16,29 @@ public class MyProblem {
         return this.input.endsWith("]");
     }
 
-    public int getStart() {
+    public int getStartNumber() {
         if (isStartWithInclude()) {
             return Integer.parseInt(input.charAt(1) + "");
         } else {
             return Integer.parseInt(input.charAt(1) + "") + 1;
         }
+    }
+
+    public int getEndNumber() {
+        if (isEndWithInclude()) {
+            return Integer.parseInt(input.charAt(3) + "");
+        } else {
+            return Integer.parseInt(input.charAt(3) + "") - 1;
+        }
+    }
+
+    public String process() {
+        StringBuilder result = new StringBuilder();
+        int start = getStartNumber();
+        int end = getEndNumber();
+        for (int i = start; i <= end; i++) {
+            result.append(i);
+        }
+        return result.toString();
     }
 }

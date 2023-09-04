@@ -56,19 +56,52 @@ class MyProblemTest {
         // Arrange
         MyProblem myProblem = new MyProblem("[1,5)");
         // Act
-        int result = myProblem.getStart();
+        int result = myProblem.getStartNumber();
         // Assert
         assertEquals(1, result);
     }
 
     @Test
-    @DisplayName("เริ่มต้อน (1,5] => 1")
+    @DisplayName("เริ่มต้อน (1,5] => 2")
     void getStartNumberWithBracket() {
         // Arrange
         MyProblem myProblem = new MyProblem("(1,5)");
         // Act
-        int result = myProblem.getStart();
+        int result = myProblem.getStartNumber();
         // Assert
         assertEquals(2, result);
+    }
+
+    @Test
+    @DisplayName("เริ่มต้อน [1,9] => 9")
+    void getEndNumberWithSqr() {
+        // Arrange
+        MyProblem myProblem = new MyProblem("[1,9]");
+        // Act
+        int result = myProblem.getEndNumber();
+        // Assert
+        assertEquals(9, result);
+    }
+
+    @Test
+    @DisplayName("เริ่มต้อน [1,9) => 8")
+    void getEndNumberWithBracket() {
+        // Arrange
+        MyProblem myProblem = new MyProblem("(1,9)");
+        // Act
+        int result = myProblem.getEndNumber();
+        // Assert
+        assertEquals(8, result);
+    }
+
+    @Test
+    @DisplayName("ข้อมูล [1,5] => 12345")
+    void runNumberByInput() {
+        // Arrange
+        MyProblem myProblem = new MyProblem("[1,5]");
+        // Act
+        String result = myProblem.process();
+        // Assert
+        assertEquals("12345", result);
     }
 }
