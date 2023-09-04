@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class MyProblemTest {
+class MyProblemSuccessTest {
     @Test
     @DisplayName("เริ่มด้วย [")
     void startWithSqrBracket() {
