@@ -22,7 +22,7 @@ public class UserService {
     public UserResponse getById(int id){
         // Get data from API
         Optional<UserGatewayResponse> responseFromApi = userGateway.callApi(id);
-        if (!responseFromApi.isPresent()) {
+        if (responseFromApi.isEmpty()) {
             throw new UserNotFoundException("User id=" + id + " not found in our system");
         }
 
