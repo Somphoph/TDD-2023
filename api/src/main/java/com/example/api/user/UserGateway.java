@@ -1,5 +1,6 @@
 package com.example.api.user;
 
+import com.example.api.user.gateway.UserGatewayResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClientException;
@@ -22,8 +23,5 @@ public class UserGateway {
             return Optional.empty();
         }
     }
-
-}
-class UserGatewayResponse {
 
 }
