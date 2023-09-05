@@ -6,6 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+
+import java.util.Objects;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
@@ -24,9 +28,10 @@ class UserControllerWithErrorTest {
         expected.setMessage("");
         when(userService.getById(2)).thenThrow(new UserNotFoundException(""));
         //Act
-        ErrorResponse result = restTemplate.getForObject("/user/2", ErrorResponse.class);
+        ResponseEntity<ErrorResponse> result = restTemplate.getForEntity("/user/2", ErrorResponse.class);
         //Assert
-        assertEquals("", result.getMessage());
-        assertEquals(expected, result);
+        assertEquals(HttpStatus.NOT_FOUND, result.getStatusCode());
+        assertEquals("", Objects.requireNonNull(result.getBody()).getMessage());
+        assertEquals(expected, result.getBody());
     }
 }

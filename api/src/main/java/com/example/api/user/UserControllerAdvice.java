@@ -14,6 +14,14 @@ public class UserControllerAdvice {
         errorResponse.setMessage(e.getMessage());
         return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
     }
+    @ExceptionHandler(UserDatabaseException.class)
+    public ResponseEntity<ErrorResponse> handleDatabaseError(Exception e) {
+        ErrorResponse errorResponse = new ErrorResponse();
+        errorResponse.setMessage(e.getMessage());
+        return new ResponseEntity<>(
+                errorResponse, HttpStatus.INTERNAL_SERVER_ERROR
+        );
+    }
 
 }
 
