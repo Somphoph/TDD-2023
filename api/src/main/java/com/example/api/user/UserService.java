@@ -13,7 +13,6 @@ public class UserService {
      * @return
      */
     public UserResponse getById(int id) {
-//        throw new UserNotFoundException("User id=" + id + " not found in our system");
         UserResponse result = new UserResponse();
         result.setId(id);
         result.setFirstname("Somkiat");
