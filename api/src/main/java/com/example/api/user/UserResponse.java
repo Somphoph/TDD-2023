@@ -3,16 +3,16 @@ package com.example.api.user;
 import java.util.Objects;
 
 public class UserResponse{
-	private String firtname;
+	private String firstname;
 	private int id;
 	private String lastname;
 
-	public void setFirtname(String firtname){
-		this.firtname = firtname;
+	public void setFirstname(String firstname){
+		this.firstname = firstname;
 	}
 
-	public String getFirtname(){
-		return firtname;
+	public String getFirstname(){
+		return firstname;
 	}
 
 	public void setId(int id){
@@ -35,7 +35,7 @@ public class UserResponse{
  	public String toString(){
 		return 
 			"UserResponse{" + 
-			"firtname = '" + firtname + '\'' + 
+			"firtname = '" + firstname + '\'' +
 			",id = '" + id + '\'' + 
 			",lastname = '" + lastname + '\'' + 
 			"}";
@@ -46,11 +46,11 @@ public class UserResponse{
 		if (this == o) return true;
 		if (o == null || getClass() != o.getClass()) return false;
 		UserResponse that = (UserResponse) o;
-		return id == that.id && Objects.equals(firtname, that.firtname) && Objects.equals(lastname, that.lastname);
+		return id == that.id && Objects.equals(firstname, that.firstname) && Objects.equals(lastname, that.lastname);
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(firtname, id, lastname);
+		return Objects.hash(firstname, id, lastname);
 	}
 }

@@ -20,13 +20,13 @@ class UserControllerTest {
         // Arrange
         UserResponse expected = new UserResponse();
         expected.setId(1);
-        expected.setFirtname("Somkiat");
+        expected.setFirstname("Somkiat");
         expected.setLastname("Pui");
         //Act
         UserResponse result = restTemplate.getForObject("/user/1", UserResponse.class);
         //Assert
         assertEquals(1, result.getId());
-        assertEquals("Somkiat", result.getFirtname());
+        assertEquals("Somkiat", result.getFirstname());
         assertEquals("Pui", result.getLastname());
         assertEquals(expected, result);
     }

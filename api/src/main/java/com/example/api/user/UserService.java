@@ -7,7 +7,7 @@ public class UserService {
     public UserResponse getById(int id){
         UserResponse result = new UserResponse();
         result.setId(id);
-        result.setFirtname("Somkiat");
+        result.setFirstname("Somkiat");
         result.setLastname("Pui");
         return result;
     }
