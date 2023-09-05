@@ -1,6 +1,5 @@
-package com.example.api.controller;
+package com.example.api.user;
 
-import com.example.api.model.UserResponse;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

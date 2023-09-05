@@ -1,4 +1,6 @@
-package com.example.api.model;
+package com.example.api.user;
+
+import java.util.Objects;
 
 public class UserResponse{
 	private String firtname;
@@ -38,4 +40,17 @@ public class UserResponse{
 			",lastname = '" + lastname + '\'' + 
 			"}";
 		}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		UserResponse that = (UserResponse) o;
+		return id == that.id && Objects.equals(firtname, that.firtname) && Objects.equals(lastname, that.lastname);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(firtname, id, lastname);
+	}
 }
